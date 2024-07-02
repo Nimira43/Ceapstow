@@ -1,0 +1,14 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Truculenta', sans-serif;
+  background-color: #111;
+}
+
+h1 {
+  color: #ff4500;
+}
