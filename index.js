@@ -1,1 +1,10 @@
-console.log('Index JS running')
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Node Shop')
+})
+
+app.listen(3000, () => {
+  console.log('Listening on Port 3000')
+})
