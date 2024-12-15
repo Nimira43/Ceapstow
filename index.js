@@ -2,7 +2,17 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('Node Shop')
+  res.send(`
+      <div>
+      <h1>Register</h1>
+        <form>
+          <input placeholder= 'email' />
+          <input placeholder= 'password' />
+          <input placeholder= 'confirm password' />
+          <button>Register</button>
+        </form>
+      </div>
+    `)
 })
 
 app.listen(3000, () => {
