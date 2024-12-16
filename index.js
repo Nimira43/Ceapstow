@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     `)
 })
 
-const badyParser = (req, res, next) => {
+const bodyParser = (req, res, next) => {
   if (req.method === 'POST') {
     req.on('data', data => {
       console.log(data)
@@ -24,14 +24,19 @@ const badyParser = (req, res, next) => {
       const formData = {}
       for (let pair of parsed) {
         const [key, value] = pair.split('=')
-        formData[key] = value}
+        formData[key] = value
+      }
       console.log(formData)
+      req.body = formData
+      next()
     })
+  } else {
+    next()
   }
 }
 
-app.post('/', (req, res) => {
-
+app.post('/', bodyParser, (req, res) => {
+  console.log(req.body)
   res.send('Account created')
 })
 
