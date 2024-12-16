@@ -8,9 +8,9 @@ app.get('/', (req, res) => {
       <div>
       <h1>Register</h1>
         <form method="POST">
-          <input placeholder= 'email' />
-          <input placeholder= 'password' />
-          <input placeholder= 'confirm password' />
+          <input name="email" placeholder= 'email' />
+          <input name="password" placeholder= 'password' />
+          <input name="passwordConfirm" placeholder= 'confirm password' />
           <button>Register</button>
         </form>
       </div>
