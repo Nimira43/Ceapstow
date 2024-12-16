@@ -15,11 +15,23 @@ app.get('/', (req, res) => {
     `)
 })
 
+const badyParser = (req, res, next) => {
+  if (req.method === 'POST') {
+    req.on('data', data => {
+      console.log(data)
+      console.log(data.toString('utf8'))
+      const parsed = data.toString('utf8').split('&')
+      const formData = {}
+      for (let pair of parsed) {
+        const [key, value] = pair.split('=')
+        formData[key] = value}
+      console.log(formData)
+    })
+  }
+}
+
 app.post('/', (req, res) => {
-  req.on('data', data => {
-    console.log(data)
-    console.log(data.toString('utf8'))
-  })
+
   res.send('Account created')
 })
 
