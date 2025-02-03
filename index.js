@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
     const formData = {}
     for (let pair of parsed) {
       const [key, value] = pair.split('=')
-      formData[key] = value
+      formData[key] = decodeURIComponent(value)
     }
     console.log(formData)
   })
