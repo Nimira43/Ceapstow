@@ -7,15 +7,34 @@ app.get('/', (req, res) => {
       <h1>Ceapstow Wholesalers</h1>
       <hr />
       <h2>Register</h2>
-      <form>
-        <input placeholder="Name" />
-        <input placeholder="Email" />
-        <input placeholder="Password" />
-        <input placeholder="Password Confirm" />
+      <form method="POST">
+        <input 
+          name="name" 
+          placeholder="Name" 
+        />
+        <input 
+          name="email" 
+          placeholder="Email" 
+        />
+        <input 
+          name="password" 
+          placeholder="Password" 
+        />
+        <input 
+          name="psswordConfirmation"
+          placeholder="Password Confirm" 
+        />
         <button>Register</button>
       </form>
     </div>
   `)
+})
+
+app.post('/', (req, res) => {
+  req.on('data', data => {
+    console.log(data)
+  })
+  res.send('Account Created!')
 })
 
 app.listen(3000, () => {
