@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
         <input placeholder="Email" />
         <input placeholder="Password" />
         <input placeholder="Password Confirm" />
+        <button>Register</button>
       </form>
     </div>
   `)
