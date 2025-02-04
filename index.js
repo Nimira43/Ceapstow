@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
 
 app.post('/', bodyParser.urlencoded({ extended: true }), (req, res) => {
   console.log(req.body)
+  
   res.send('Account Created!')
 })
 
