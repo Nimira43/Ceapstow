@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   `)
 })
 
-app.post('/', (req, res) => {
+const bodyParser = (req, res) => {
   req.on('data', data => {
     const parsed = data.toString('utf8').split('&')
     const formData = {}
@@ -40,6 +40,10 @@ app.post('/', (req, res) => {
     }
     console.log(formData)
   })
+}
+
+app.post('/', (req, res) => {
+  
   res.send('Account Created!')
 })
 
