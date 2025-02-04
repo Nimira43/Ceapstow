@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   `)
 })
 
-const bodyParser = (req, res) => {
+const bodyParser = (req, res, next) => {
   req.on('data', data => {
     const parsed = data.toString('utf8').split('&')
     const formData = {}
