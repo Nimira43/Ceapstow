@@ -53,7 +53,7 @@ const test = async () => {
   // await repo.create({ email: 'john@doe', password: 'password' })
   // const users = await repo.getAll()
   
-  console.log(user)
+  // console.log(user)
 }
 
 test()
