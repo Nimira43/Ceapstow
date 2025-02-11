@@ -9,13 +9,10 @@ class UsersRepository {
     try {
       fs.accessSync(this.filename)
     } catch (err) {
-
+      fs.writeFileSync(this.filename, '[]')
     } 
   }
-  async checkForFile() {
-
-  }  
+  async checkForFile() {}  
 }
 
-const repo = new UsersRepository()
-repo.checkForFile(0)
+const repo = new UsersRepository('users.json')
