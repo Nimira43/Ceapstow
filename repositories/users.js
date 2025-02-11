@@ -53,6 +53,24 @@ class UsersRepository {
     Object.assign(record, attrs)
     await this.writeAll(records)
   }
+
+  async getOneBy(filters) {
+    const records = await this.getAll()
+
+    for (let record of records) {
+      let found = true
+
+      for (let key in filters) {
+        if (record[key] !== filters) {
+           found = false
+        }
+      }
+
+      if (found) {
+        return record
+      }
+    }
+  }
 }
 
 const test = async () => {
@@ -64,7 +82,7 @@ const test = async () => {
   // const users = await repo.getAll()
   // console.log(user)
 
-  await repo.update('9420431f', { password: 'leia1234'})
+  await repo.update('942331313131f', { password: 'leia1234'})
 
 }
 
