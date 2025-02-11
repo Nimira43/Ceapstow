@@ -61,7 +61,7 @@ class UsersRepository {
       let found = true
 
       for (let key in filters) {
-        if (record[key] !== filters) {
+        if (record[key] !== filters[key]) {
            found = false
         }
       }
@@ -76,13 +76,8 @@ class UsersRepository {
 const test = async () => {
   const repo = new UsersRepository('users.json')
 
-  // await repo.create({ email: 'solo1@mFalcon.com'})
-  // const user = await repo.getOne('2837')
-  // await repo.create({ email: 'jane@doe', password: 'passwd123' })
-  // const users = await repo.getAll()
-  // console.log(user)
-
-  await repo.update('942331313131f', { password: 'leia1234'})
+  const user = await repo.getOneBy({ email: 'jane@doe.com' })
+  console.log(user)
 
 }
 
