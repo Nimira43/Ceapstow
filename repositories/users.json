@@ -13,5 +13,14 @@
     "email": "john@doe",
     "password": "password",
     "id": "53b6fee3"
+  },
+  {
+    "email": "jane@doe",
+    "password": "passwd123",
+    "id": "df7bb88c"
+  },
+  {
+    "email": "solo1@mFalcon.com",
+    "id": "9420431f"
   }
 ]
