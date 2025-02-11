@@ -19,5 +19,9 @@ class UsersRepository {
     console.log(contents)
   }
 }
+const test = async () => {
+  const repo = new UsersRepository('users.json')
+  await repo.getAll()
+}
 
-const repo = new UsersRepository('users.json')
+test()
