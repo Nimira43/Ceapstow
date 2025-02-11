@@ -46,7 +46,6 @@ class UsersRepository {
   async update(id, attrs) {
     const records = await this.getAll() 
     const record = records.find(record => record.id === id)
-  
     if (!record) {
       throw new Error(`Record with id ${id} not found.`)
     }
@@ -56,16 +55,13 @@ class UsersRepository {
 
   async getOneBy(filters) {
     const records = await this.getAll()
-
     for (let record of records) {
       let found = true
-
       for (let key in filters) {
         if (record[key] !== filters[key]) {
            found = false
         }
       }
-
       if (found) {
         return record
       }
@@ -75,7 +71,6 @@ class UsersRepository {
 
 const test = async () => {
   const repo = new UsersRepository('users.json')
-
   const user = await repo.getOneBy({
     email: 'jane@doe.com',
     password: 'passdfdfwd123'
