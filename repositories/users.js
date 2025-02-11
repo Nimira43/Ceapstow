@@ -13,13 +13,10 @@ class UsersRepository {
     } 
   }
   async getAll() {
-    const contents = await fs.promises.readFile(this.filename, {
-      encoding: 'utf8'
-    })
-    const data = JSON.parse(contents)
-    return data
+    return JSON.parse(await fs.promises.readFile(this.filename, { encoding: 'utf8' }))
   }
 }
+
 const test = async () => {
   const repo = new UsersRepository('users.json')
   const users = await repo.getAll()
