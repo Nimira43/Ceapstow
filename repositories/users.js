@@ -35,7 +35,7 @@ class UsersRepository {
 
 const test = async () => {
   const repo = new UsersRepository('users.json')
-  await repo.create({ email: 'drTom@tardis.com', password: 'j311y8@By' })
+  await repo.create({ email: 'john@doe', password: 'password' })
   const users = await repo.getAll()
   console.log(users)
 }
