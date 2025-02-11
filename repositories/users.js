@@ -23,13 +23,13 @@ class UsersRepository {
   }
 
   async writeAll(records) {
-    await fs.promises.writeFile(this.filename, JSON.stringify(records))
+    await fs.promises.writeFile(this.filename, JSON.stringify(records, null, 2))
   }
 }
 
 const test = async () => {
   const repo = new UsersRepository('users.json')
-  await repo.create({ email: 'ayrton.senna@mclaren.com', password: 'ch@mp10n' })
+  await repo.create({ email: 'drTom@tardis.com', password: 'j311y8@By' })
   const users = await repo.getAll()
   console.log(users)
 }
