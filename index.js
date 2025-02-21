@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
       <h1>Ceapstow Wholesalers</h1>
       <hr />
       <h2>Register</h2>
+      <small>Your ID: ${req.session.userId}</small>
       <form method="POST">
         <input 
           name="name" 
