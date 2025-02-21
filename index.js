@@ -34,10 +34,13 @@ app.get('/', (req, res) => {
   `)
 })
 
-app.post('/', (req, res) => {
-  const {name, email, password, passwordConfirmation } = req.body
+app.post('/', async (req, res) => {
+  const { name, email, password, passwordConfirmation } = req.body
+  
   const existingUser = await usersRepo.getOneBy({ email })
-
+  if (existingUser) {
+    return res.send('Email is already in use.')
+  }
 
   res.send('Account Created!')
 })
