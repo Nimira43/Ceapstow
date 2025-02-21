@@ -15,11 +15,10 @@ app.use(cookieSession({
 app.get('/signup', (req, res) => {
   res.send(`
     <div>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+      <link rel="stylesheet" type="text/css" href="styles.css">
       <h1>Ceapstow Wholesalers</h1>
       <hr />
       <h2>Register</h2>
-      <small>Your ID: ${req.session.userId}</small>
       <form method="POST">
         <input 
           name="name" 
@@ -64,10 +63,32 @@ app.post('/signup', async (req, res) => {
   res.send('Accounted Created.')
 })  
 
-app.get('/signout', () => {
-  
+app.get('/signout', (req, res) => {
+  req.session = null
+  res.send('You are now logged out.')
 })
 
+app.get('/signin', (req, res) => {
+  res.send(`
+    <div>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <h1>Ceapstow Wholesalers</h1>
+      <hr />
+      <h2>Login</h2>
+      <form method="POST">
+        <input 
+          name="email" 
+          placeholder="Email" 
+        />
+        <input 
+          name="password" 
+          placeholder="Password" 
+        />
+        <button>Login</button>
+      </form>
+    </div>
+  `)
+})
 
 app.listen(3000, () => {
   console.log('Server listening on Port 3000')
