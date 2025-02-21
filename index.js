@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
+const bcrypt = require('bcrypt')
 const usersRepo = require('./repositories/users')
 
 const app = express()
@@ -54,10 +55,12 @@ app.post('/', async (req, res) => {
     return res.send('Password must match.')
   }
 
-  const user = await usersRepo.create({ email, password })
+  const hashedPassword = await bcrypt.hash(password, 10)
+  const user = await usersRepo.create({ email, password: hashedPassword })
 
-  res.send('Account Created!')
-})
+  req.session.userId = user.id
+  res.send('Accounted Created.')
+})  
 
 app.listen(3000, () => {
   console.log('Server listening on Port 3000')
