@@ -12,7 +12,7 @@ app.use(cookieSession({
   keys: ['gkogfklsktodkslf']
 }))
 
-app.get('/', (req, res) => {
+app.get('/signup', (req, res) => {
   res.send(`
     <div>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
   `)
 })
 
-app.post('/', async (req, res) => {
+app.post('/signup', async (req, res) => {
   const { email, password, passwordConfirmation } = req.body
   
   const existingUser = await usersRepo.getOneBy({ email })
