@@ -3,11 +3,14 @@ const bodyParser = require('body-parser')
 const usersRepo = require('./repositories/users')
 
 const app = express()
+
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   res.send(`
     <div>
+    <link rel="stylesheet" type="text/css" href="styles.css">
       <h1>Ceapstow Wholesalers</h1>
       <hr />
       <h2>Register</h2>
