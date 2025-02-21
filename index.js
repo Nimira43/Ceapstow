@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const usersRepo = require('./repositories/users')
 
 const app = express()
@@ -9,7 +9,7 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieSession({
-  keys: ['RandomSeriesOfCharacters']
+  keys: ['gkogfklsktodkslf']
 }))
 
 app.get('/', (req, res) => {
@@ -55,10 +55,11 @@ app.post('/', async (req, res) => {
     return res.send('Password must match.')
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10)
-  const user = await usersRepo.create({ email, password: hashedPassword })
+  // const hashedPassword = await bcrypt.hash(password, 10)
+  const user = await usersRepo.create({ email, password })
 
   req.session.userId = user.id
+
   res.send('Accounted Created.')
 })  
 
