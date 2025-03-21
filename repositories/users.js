@@ -1,5 +1,8 @@
 const fs = require('fs')
 const crypto = require('crypto')
+const util = require('util')
+
+const scrypt = util.promisify(crypto.scrypt)
 
 class UsersRepository {
   constructor(filename) {
@@ -20,7 +23,7 @@ class UsersRepository {
   async create(attrs) {
     attrs.id = this.randomId()
     const salt = crypto.randomBytes(8).toString('hex')
-    crypto.scrypt(attrs.password, salt, 64, (err, buf) => {
+    scrypt(attrs.password, salt, 64, (err, buf) => {
       const hashed = buf.toString('hex')
     })
 
