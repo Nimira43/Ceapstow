@@ -23,9 +23,7 @@ class UsersRepository {
   async create(attrs) {
     attrs.id = this.randomId()
     const salt = crypto.randomBytes(8).toString('hex')
-    scrypt(attrs.password, salt, 64, (err, buf) => {
-      const hashed = buf.toString('hex')
-    })
+    const hashed = await scrypt(attrs.password, salt, 64)
 
     const records = await this.getAll()
     records.push(attrs)
