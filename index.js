@@ -1,7 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
-// const bcrypt = require('bcrypt')
 const usersRepo = require('./repositories/users')
 
 const app = express()
@@ -55,7 +54,6 @@ app.post('/signup', async (req, res) => {
     return res.send('Password must match.')
   }
 
-  // const hashedPassword = await bcrypt.hash(password, 10)
   const user = await usersRepo.create({ email, password })
 
   req.session.userId = user.id
