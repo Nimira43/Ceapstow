@@ -5,31 +5,7 @@ const router = express.Router()
 
 router.get('/signup', (req, res) => {
   res.send(`
-    <div>
-      <link rel="stylesheet" type="text/css" href="styles.css">
-      <h1>Ceapstow Wholesalers</h1>
-      <hr />
-      <h2>Register</h2>
-      <form method="POST">
-        <input 
-          name="name" 
-          placeholder="Name" 
-        />
-        <input 
-          name="email" 
-          placeholder="Email" 
-        />
-        <input 
-          name="password" 
-          placeholder="Password" 
-        />
-        <input 
-          name="passwordConfirmation"
-          placeholder="Password Confirm" 
-        />
-        <button>Register</button>
-      </form>
-    </div>
+    
   `)
 })
 
