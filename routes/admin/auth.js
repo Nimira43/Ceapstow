@@ -101,3 +101,5 @@ router.post('/signin', async (req, res) => {
 
   res.send('You are now signed in.')
 }) 
+
+module.exports = router
