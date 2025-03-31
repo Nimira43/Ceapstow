@@ -21,5 +21,10 @@
     "email": "test5@test.com",
     "password": "b516b3bb67119580989ba0d35e95d20747cddecfdc61afa9fad3f389bbb0b4e3a26be5fc9d8054ec4b6522b8f0e2a912e6150af02a80755ba9651362cdf0bc14.ae4254d83ffcb8da",
     "id": "3be24718"
+  },
+  {
+    "email": "ayrton@mclaren.com",
+    "password": "0269a8b9694d2cfcf39cc417b32f768ebd85543f791138c84422b8083d62a3f03d76d41de188d81bbf784e296fe538e3b8c9b362a8b78b56bd7e8fa80e67a82b.44a51592b18f0426",
+    "id": "213e98af"
   }
 ]
