@@ -1,7 +1,7 @@
 module.exports = ({ req }) => {
   return `
     <div>
-      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link rel="stylesheet" type="text/css" href="/styles.css">
       <h1>Ceapstow Wholesalers</h1>
       <hr />
       <h4>Your ID is ${req.session.userId}</h4>

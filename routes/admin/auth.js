@@ -1,6 +1,6 @@
 const express = require('express')
 const usersRepo = require('../../repositories/users')
-const signupTemplate = require('../../views/adming/auth/signup')
+const signupTemplate = require('../../views/admin/auth/signup')
 
 const router = express.Router()
 
