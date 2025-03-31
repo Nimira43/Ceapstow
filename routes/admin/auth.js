@@ -3,7 +3,7 @@ const usersRepo = require('../../repositories/users')
 
 const router = express.Router()
 
-app.get('/signup', (req, res) => {
+router.get('/signup', (req, res) => {
   res.send(`
     <div>
       <link rel="stylesheet" type="text/css" href="styles.css">
@@ -33,7 +33,7 @@ app.get('/signup', (req, res) => {
   `)
 })
 
-app.post('/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
   const { email, password, passwordConfirmation } = req.body
   
   const existingUser = await usersRepo.getOneBy({ email })
@@ -53,12 +53,12 @@ app.post('/signup', async (req, res) => {
   res.send('Accounted Created.')
 })  
 
-app.get('/signout', (req, res) => {
+router.get('/signout', (req, res) => {
   req.session = null
   res.send('You are now logged out.')
 })
 
-app.get('/signin', (req, res) => {
+router.get('/signin', (req, res) => {
   res.send(`
     <div>
       <link rel="stylesheet" type="text/css" href="styles.css">
@@ -80,7 +80,7 @@ app.get('/signin', (req, res) => {
   `)
 })
 
-app.post('/signin', async (req, res) => {
+router.post('/signin', async (req, res) => {
   const { email, password } = req.body
   
   const user = await usersRepo.getOneBy({ email })
