@@ -20,7 +20,7 @@ router.post(
       .normalizeEmail()
       .isEmail()
       .withMessage('Must be a valid email.')
-      .custom(async(email) => {
+      .custom(async email => {
         const existingUser = await usersRepo.getOneBy({ email })  
         if (existingUser) {
           throw new Error('Email is already in use.')
