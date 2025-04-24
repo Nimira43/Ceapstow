@@ -10,7 +10,10 @@ router.get('/signup', (req, res) => {
 })
 
 router.post('/signup', [
-  check('email'),
+  check('email')
+    .trim()
+    .normalizeEmail()
+    .isEmail(),
   check('password'),
   check('passwordConfirmation')
 ], async (req, res) => {
