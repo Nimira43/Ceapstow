@@ -1,6 +1,7 @@
 const express = require('express')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
+const signinTemplate = require('../../views/admin/auth/signin')
 
 const router = express.Router()
 
@@ -34,25 +35,7 @@ router.get('/signout', (req, res) => {
 })
 
 router.get('/signin', (req, res) => {
-  res.send(`
-    <div>
-      <link rel="stylesheet" type="text/css" href="styles.css">
-      <h1>Ceapstow Wholesalers</h1>
-      <hr />
-      <h2>Login</h2>
-      <form method="POST">
-        <input 
-          name="email" 
-          placeholder="Email" 
-        />
-        <input 
-          name="password" 
-          placeholder="Password" 
-        />
-        <button>Login</button>
-      </form>
-    </div>
-  `)
+  res.send(signinTemplate())
 })
 
 router.post('/signin', async (req, res) => {
