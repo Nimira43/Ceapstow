@@ -3,16 +3,18 @@ const { check } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
-
 const router = express.Router()
 
 router.get('/signup', (req, res) => {
   res.send(signupTemplate({ req }))
 })
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', [
+  check('email'),
+  check('password'),
+  check('passwordConfirmation')
+], async (req, res) => {
   const { email, password, passwordConfirmation } = req.body
-  
   const existingUser = await usersRepo.getOneBy({ email })
   
   if (existingUser) {
@@ -24,9 +26,7 @@ router.post('/signup', async (req, res) => {
   }
 
   const user = await usersRepo.create({ email, password })
-
   req.session.userId = user.id
-
   res.send('Accounted Created.')
 })  
 
@@ -41,7 +41,6 @@ router.get('/signin', (req, res) => {
 
 router.post('/signin', async (req, res) => {
   const { email, password } = req.body
-  
   const user = await usersRepo.getOneBy({ email })
   
   if (!user) {
@@ -57,7 +56,6 @@ router.post('/signin', async (req, res) => {
   }
 
   req.session.userId = user.id
-
   res.send('You are now signed in.')
 }) 
 
