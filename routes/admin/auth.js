@@ -43,14 +43,7 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req)
     console.log(errors)
-
-    const { email, password, passwordConfirmation } = req.body
-    
-
-    if (password !== passwordConfirmation) {
-      return res.send('Password must match.')
-    }
-
+    const { email, password } = req.body
     const user = await usersRepo.create({ email, password })
     req.session.userId = user.id
     res.send('Accounted Created.')
