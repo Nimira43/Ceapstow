@@ -4,7 +4,6 @@ module.exports = () => {
   return layout({
     content: `
       <div>
-        <link rel="stylesheet" type="text/css" href="styles.css">
         <h1>Ceapstow Wholesalers</h1>
         <hr />
         <h2>Login</h2>
