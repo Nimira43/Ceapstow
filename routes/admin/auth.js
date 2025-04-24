@@ -14,7 +14,9 @@ router.post('/signup', [
     .trim()
     .normalizeEmail()
     .isEmail(),
-  check('password'),
+  check('password')
+    .trim()
+    .isLength({ min: 8, max: 20 }),
   check('passwordConfirmation')
 ], async (req, res) => {
   const { email, password, passwordConfirmation } = req.body
