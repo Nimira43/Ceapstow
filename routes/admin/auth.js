@@ -18,10 +18,12 @@ router.post(
     check('email')
       .trim()
       .normalizeEmail()
-      .isEmail(),
+      .isEmail()
+      .withMessage('Must be a valid email.'),
     check('password')
       .trim()
-      .isLength({ min: 8, max: 20 }),
+      .isLength({ min: 8, max: 20 })
+      .withMessage('Password must be between 8 and 20 characters'),
     check('passwordConfirmation')
       .trim()
       .isLength({ min: 8, max: 20 }),
@@ -29,7 +31,7 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req)
     console.log(errors)
-    
+
     const { email, password, passwordConfirmation } = req.body
     const existingUser = await usersRepo.getOneBy({ email })
     
