@@ -18,6 +18,8 @@ router.post('/signup', [
     .trim()
     .isLength({ min: 8, max: 20 }),
   check('passwordConfirmation')
+    .trim()
+    .isLength({ min: 8, max: 20 }),
 ], async (req, res) => {
   const { email, password, passwordConfirmation } = req.body
   const existingUser = await usersRepo.getOneBy({ email })
