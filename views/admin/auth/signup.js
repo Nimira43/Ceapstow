@@ -14,7 +14,7 @@ module.exports = ({ req, errors }) => {
       <div>
         <h1>Ceapstow Wholesalers</h1>
         <hr />
-        // <h4>Your ID is ${req.session.userId}</h4>
+        
         <hr />
         <h2>Register</h2>
         <form method="POST">
@@ -26,17 +26,28 @@ module.exports = ({ req, errors }) => {
             name="email"
             placeholder="Email"
           />
+          <div style="color: red;">
+            ${getError(errors, 'email')}
+          </div> 
           <input
             name="password"
             placeholder="Password"
           />
+          <div style="color: red;">
+            ${getError(errors, 'password')}
+          </div>
           <input
             name="passwordConfirmation"
             placeholder="Password Confirm"
           />
+          <div style="color: red;">
+            ${getError(errors, 'passwordConfirmation')}
+          </div>
           <button>Register</button>
         </form>
       </div>
     `
   })
 }
+
+{/* <h4>Your ID is ${req.session.userId}</h4> */}
