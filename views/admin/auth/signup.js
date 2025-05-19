@@ -1,5 +1,11 @@
 const layout = require('../layout')
 
+const getError = (errors, prop) => {
+  if (errors) {
+    return errors.mapped()[prop].msg
+  }
+}
+
 module.exports = ({ req, errors }) => {
   return layout({
     content: `
