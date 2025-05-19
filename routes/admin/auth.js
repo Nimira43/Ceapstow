@@ -3,6 +3,7 @@ const { check, validationResult } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
+const { requireEmail } = require('./validators')
 const router = express.Router()
 
 router.get(
@@ -15,17 +16,7 @@ router.get(
 router.post(
   '/signup',
   [
-    check('email')
-      .trim()
-      .normalizeEmail()
-      .isEmail()
-      .withMessage('Must be a valid email.')
-      .custom(async email => {
-        const existingUser = await usersRepo.getOneBy({ email })  
-        if (existingUser) {
-          throw new Error('Email is already in use.')
-        }    
-      }),
+    requireEmail,
     check('password')
       .trim()
       .isLength({ min: 8, max: 20 })
