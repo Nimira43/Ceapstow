@@ -3,7 +3,7 @@ const { check, validationResult } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
-const { requireEmail, requirePassword } = require('./validators')
+const { requireEmail, requirePassword, requirePasswordConfirmation } = require('./validators')
 const router = express.Router()
 
 router.get(
@@ -18,7 +18,7 @@ router.post(
   [
     requireEmail,
     requirePassword,
-    
+    requirePasswordConfirmation
   ],
   async (req, res) => {
     const errors = validationResult(req)
