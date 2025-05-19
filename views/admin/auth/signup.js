@@ -15,7 +15,7 @@ module.exports = ({ req, errors }) => {
         <h1>Ceapstow Wholesalers</h1>
         <hr />
         
-        <hr />
+        
         <h2>Register</h2>
         <form method="POST">
           <input
@@ -50,4 +50,7 @@ module.exports = ({ req, errors }) => {
   })
 }
 
-{/* <h4>Your ID is ${req.session.userId}</h4> */}
+{/* 
+  <h4>Your ID is ${req.session.userId}</h4> 
+  <hr />
+*/}
