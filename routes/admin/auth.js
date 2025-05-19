@@ -3,7 +3,7 @@ const { check, validationResult } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
-const { requireEmail } = require('./validators')
+const { requireEmail, requirePassword } = require('./validators')
 const router = express.Router()
 
 router.get(
@@ -17,7 +17,7 @@ router.post(
   '/signup',
   [
     requireEmail,
-    
+    requirePassword,
     check('passwordConfirmation')
       .trim()
       .isLength({ min: 8, max: 20 })
