@@ -1,8 +1,10 @@
 const layout = require('../layout')
 
 const getError = (errors, prop) => {
-  if (errors) {
+  try {
     return errors.mapped()[prop].msg
+  } catch (err) {
+    return ''
   }
 }
 
@@ -12,7 +14,7 @@ module.exports = ({ req, errors }) => {
       <div>
         <h1>Ceapstow Wholesalers</h1>
         <hr />
-        <h4>Your ID is ${req.session.userId}</h4>
+        // <h4>Your ID is ${req.session.userId}</h4>
         <hr />
         <h2>Register</h2>
         <form method="POST">
