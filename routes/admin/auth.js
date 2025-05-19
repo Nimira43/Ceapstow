@@ -17,10 +17,7 @@ router.post(
   '/signup',
   [
     requireEmail,
-    check('password')
-      .trim()
-      .isLength({ min: 8, max: 20 })
-      .withMessage('Password must be between 8 and 20 characters'),
+    
     check('passwordConfirmation')
       .trim()
       .isLength({ min: 8, max: 20 })

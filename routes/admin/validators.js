@@ -13,4 +13,8 @@ module.exports = {
         throw new Error('Email is already in use.')
       }    
     }),
+  requirePassword: check('password')
+    .trim()
+    .isLength({ min: 8, max: 20 })
+    .withMessage('Password must be between 8 and 20 characters'),
 }
