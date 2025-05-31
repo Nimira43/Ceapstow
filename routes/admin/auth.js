@@ -50,7 +50,13 @@ router.get(
 )
 
 router.post(
-  '/signin',
+  '/signin', [
+    check('email')
+      .trim()
+      .normalizeEmail()
+      .isEmail(),
+    check('password')
+  ],
   async (req, res) => {
     const { email, password } = req.body
     const user = await usersRepo.getOneBy({ email })
