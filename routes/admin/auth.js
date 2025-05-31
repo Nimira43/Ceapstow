@@ -54,8 +54,10 @@ router.post(
     check('email')
       .trim()
       .normalizeEmail()
-      .isEmail(),
+      .isEmail()
+      .withMessage('Must provide a valid email.'),
     check('password')
+      .trim()
   ],
   async (req, res) => {
     const { email, password } = req.body
