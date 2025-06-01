@@ -57,8 +57,8 @@ router.get(
 
 router.post(
   '/signin', [
-    
-    
+    requireEmailExists,
+    requireValidPasswordForUser    
   ],
   async (req, res) => {
     const errors  = validationResult(req)
