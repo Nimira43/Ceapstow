@@ -1,6 +1,5 @@
-const { check } = require('express-validator')
 const express = require('express')
-const { validationResult } = require('express-validator')
+const { check, validationResult } = require('express-validator')
 const usersRepo = require('../../repositories/users')
 const signupTemplate = require('../../views/admin/auth/signup')
 const signinTemplate = require('../../views/admin/auth/signin')
@@ -28,7 +27,7 @@ router.post(
       return res.send(signupTemplate({ req, errors }))
     }
 
-    const { email, password } = req.body
+    const { email, password, passwordConfirmation } = req.body
     const user = await usersRepo.create({ email, password })
     req.session.userId = user.id
     res.send('Accounted Created.')
@@ -52,17 +51,7 @@ router.get(
 
 router.post(
   '/signin', [
-    check('email')
-      .trim()
-      .normalizeEmail()
-      .isEmail()
-      .withMessage('Must provide a valid email.')
-      .custom(async (email) => {
-        const user = await usersRepo.getOneBy({ email })
-        if (!user) {
-          throw new Error('Email not found.')
-        }
-      }),
+    
     check('password')
       .trim()
       .custom(async (password, {req} ) => {
