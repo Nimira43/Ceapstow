@@ -20,10 +20,12 @@ module.exports = ({ errors }) => {
             name="email" 
             placeholder="Email" 
           />
+          ${getError(errors, 'email')}
           <input 
             name="password" 
             placeholder="Password" 
           />
+          ${getError(errors, 'password')}
           <button>Login</button>
         </form>
       </div>    
