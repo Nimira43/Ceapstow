@@ -51,7 +51,7 @@ router.get(
 router.get(
   '/signin',
   (req, res) => {
-    res.send(signinTemplate())
+    res.send(signinTemplate({}))
   }
 )
 
@@ -62,7 +62,8 @@ router.post(
   ],
   async (req, res) => {
     const errors  = validationResult(req)
-    if (!error.isEmpty()) {
+    
+    if (!errors.isEmpty()) {
       return res.send(signinTemplate({errors}))
     }
 
