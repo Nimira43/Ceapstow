@@ -8,12 +8,34 @@ module.exports = ({ content }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="/css/main.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
-        <title>Document</title>
+        <title>Ceapstow</title>
       </head>
-      <body>
-        
+      <body class="admin">
+        <header>
+          <nav class="navbar navbar-bottom">
+            <div class="container navbar-container">
+              <div>
+                <a href="/admin">
+                <h3 class="title">Ceapstow</h3>
+                </a>
+              </div>
+              <div class="navbar-item">
+                <div class="navbar-buttons">
+                  <div class="navbar-item">
+                    <a href="/admin">
+                      <i class="fa-solid fa-box"></i>
+                      Products
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div class="container">
+          ${content}       
+        </div>
       </body>
     </html>
-      
   `
 }
