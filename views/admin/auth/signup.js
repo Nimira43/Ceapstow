@@ -5,34 +5,16 @@ module.exports = ({ req, errors }) => {
   return layout({
     content: `
       <div>
-        <hr />
-          <h4>Your ID is ${req.session.userId}</h4> 
-        <hr />
+        <h4>Your ID is ${req.session.userId}</h4> 
         <h1>Ceapstow Wholesalers</h1>
-        <hr />
         <h2>Register</h2>
         <form method="POST">
-          <input
-            name="email"
-            placeholder="Email"
-          />
-          <div style="color: red;">
-            ${getError(errors, 'email')}
-          </div> 
-          <input
-            name="password"
-            placeholder="Password"
-          />
-          <div style="color: red;">
-            ${getError(errors, 'password')}
-          </div>
-          <input
-            name="passwordConfirmation"
-            placeholder="Password Confirm"
-          />
-          <div style="color: red;">
-            ${getError(errors, 'passwordConfirmation')}
-          </div>
+          <input name="email" placeholder="Email" />
+          ${getError(errors, 'email')} 
+          <input name="password" placeholder="Password" />
+          ${getError(errors, 'password')}
+          <input name="passwordConfirmation" placeholder="Password Confirm" />
+          ${getError(errors, 'passwordConfirmation')}
           <button>Register</button>
         </form>
       </div>
