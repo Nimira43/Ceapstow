@@ -62,7 +62,9 @@ router.post(
   ],
   async (req, res) => {
     const errors  = validationResult(req)
-    console.log(errors)
+    if (!error.isEmpty()) {
+      return res.send(signinTemplate({errors}))
+    }
 
     const { email } = req.body
     const user = await usersRepo.getOneBy({ email }) 
