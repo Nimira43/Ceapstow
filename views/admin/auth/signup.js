@@ -8,7 +8,7 @@ module.exports = ({ req, errors }) => {
         <div class="columns is-centered">
           <div class="column is-one-quarter">
             <form method="POST">
-              <h1 class="title>Register</h1>
+              <h1 class="title">Register</h1>
               <div class="field">
                 <label class="label">Email</label>
                 <input required class="input" placeholder="Email" name="email" />
@@ -24,7 +24,7 @@ module.exports = ({ req, errors }) => {
                 <input required class="input"  placeholder="Confirm Password" name="passwordConfirm" type="password" />
                 <p class="help is-danger">${getError(errors, 'passwordConfirm')}</p>
               </div>
-              <button class="button is-primary">Submit</button>
+              <button class="button orange-btn">Submit</button>
             </form>
             <a href="/signin">Already have an account? Register</a>
           </div>
