@@ -17,7 +17,11 @@ class UsersRepository {
     } 
   }
   async getAll() {
-    return JSON.parse(await fs.promises.readFile(this.filename, { encoding: 'utf8' }))
+    return JSON.parse(
+      await fs.promises.readFile(
+        this.filename, { encoding: 'utf8' }
+      )
+    )
   }
 
   async create(attrs) {

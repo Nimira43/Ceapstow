@@ -1,51 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-body {
-  font-family: 'Cormorant Garamond', serif;
-  background-color: #deffde;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  text-decoration: none;
 }
 
-h1,
-h2 {
-  text-align: center;
-  text-transform: uppercase;
+:root {
+  --primary: #ff4500;
+  --support: #45ecec;
+  --dark: #111;
+  --light: #fffcfa;
+  --grey: #333;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #fefffe;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input,
-button {
-  padding: 10px;
-  font-family: inherit;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background-color: #3bc63b;
-  color: #fefffe;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: all 0.5s ease-in;
-}
-
-button:hover {
-  background-color: #84c984;
-}
