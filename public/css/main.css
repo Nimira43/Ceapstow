@@ -45,3 +45,19 @@
 .navbar-top.navbar {
   background-color: var(--dark);
 }
+
+.navbar-buttons {
+  display: flex;
+}
+
+.navbar-top .container.navbar-container,
+.navbar-bottom .container.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  align-items: center;
+}
+
+#cart h3 {
+  margin-top: 50px
+}
