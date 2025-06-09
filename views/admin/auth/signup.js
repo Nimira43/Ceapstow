@@ -4,20 +4,32 @@ const {getError} = require('../../helpers')
 module.exports = ({ req, errors }) => {
   return layout({
     content: `
-      <div>
-        <h4>Your ID is ${req.session.userId}</h4> 
-        <h1>Ceapstow Wholesalers</h1>
-        <h2>Register</h2>
-        <form method="POST">
-          <input name="email" placeholder="Email" />
-          ${getError(errors, 'email')} 
-          <input name="password" placeholder="Password" />
-          ${getError(errors, 'password')}
-          <input name="passwordConfirmation" placeholder="Password Confirm" />
-          ${getError(errors, 'passwordConfirmation')}
-          <button>Register</button>
-        </form>
-      </div>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-one-quarter">
+            <form method="POST">
+              <h1 class="title>Register</h1>
+              <div class="field">
+                <label class="label">Email</label>
+                <input required class="input" placeholder="Email" name="email" />
+                <p class="help is-danger">${getError(errors, 'email')}</p>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>  
+                <input required class="input"  placeholder="Password" name="password" type="password" />
+                <p class="help is-danger">${getError(errors, 'password')}</p>
+              </div>
+              <div class="field">
+                <label class="label">Confirm Password</label>  
+                <input required class="input"  placeholder="Confirm Password" name="passwordConfirm" type="password" />
+                <p class="help is-danger">${getError(errors, 'passwordConfirm')}</p>
+              </div>
+              <button class="button is-primary">Submit</button>
+            </form>
+            <a href="/signin">Already have an account? Register</a>
+          </div>
+        </div>
+      </div>    
     `
   })
 }
