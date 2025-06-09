@@ -14,3 +14,34 @@
   --grey: #333;
 }
 
+.navbar ul.social {
+  display: flex;
+}
+
+.navbar ul.social li {
+  margin-right: 20px;
+}
+
+.navbar ul.social li a {
+  color: var(--light);
+}
+
+.banner {
+  margin: 50px;
+}
+
+.column.products {
+  flex-wrap: wrap;
+}
+
+.column-footer-item i {
+  margin-right: 10px;
+}
+
+.navbar-bottom.navbar {
+  align-items: center;
+}
+
+.navbar-top.navbar {
+  background-color: var(--dark);
+}
