@@ -173,3 +173,6 @@
   background-color: var(--primary) !important;
 }
 
+form p {
+  margin-top: 10px;
+}

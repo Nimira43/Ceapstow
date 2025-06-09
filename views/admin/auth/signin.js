@@ -20,8 +20,10 @@ module.exports = ({ errors }) => {
                 <p class="help is-danger">${getError(errors, 'password')}</p>
               </div>
               <button class="button orange-btn">Submit</button>
+              <p>Have no account?  
+                <a href="/signup">Register.</a>
+              </p>
             </form>
-            <a href="/signup">Do not have an account? Sign Up</a>
           </div>
         </div>
       </div>    
