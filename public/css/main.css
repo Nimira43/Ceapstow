@@ -59,5 +59,30 @@
 }
 
 #cart h3 {
-  margin-top: 50px
+  margin-top: 50px;
 }
+
+#cart .cart-item {
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.product-card .card-footer {
+  justify-content: center;
+}
+
+.product-card .card-footer form {
+  display: block;
+  width: 100%;
+}
+
+.admin > div.container {
+  margin: 40px 10%;
+}
+
+.admin .control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
