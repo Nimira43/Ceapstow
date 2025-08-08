@@ -13,6 +13,11 @@ module.exports = class Repository {
       fs.writeFileSync(this.filename, '[]')
     } 
   }
+
+  async create() {
+    
+  }
+
   async getAll() {
     return JSON.parse(
       await fs.promises.readFile(
