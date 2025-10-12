@@ -27,6 +27,7 @@ router.post(
     requirePasswordConfirmation
   ],
   async (req, res) => {
+    console.log('Incoming form data:', req.body)
     const errors = validationResult(req)
     
     if (!errors.isEmpty()) {

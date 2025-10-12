@@ -1,0 +1,12 @@
+[
+  {
+    "email": "ernie@test.com",
+    "password": "729ab191c6ad9e407fddd53357921363a8fe241904122804a50c93bf9a02bb5560e7b8f591bd901871b12e0f1e9e8ff3d8324c488d307ac78d979d23d4932208.b121d588403592a2",
+    "id": "13b04bd8"
+  },
+  {
+    "email": "debb@test.com",
+    "password": "9ff1ee464aed5293c1950a273c97a45eb4f1aec98a6c15569aea34212197da8b9dd11f1843ddc3dd1084e9defcd105a41612677b2fc528986b435d5eadac3e65.fc66e588bbada692",
+    "id": "fe864fed"
+  }
+]

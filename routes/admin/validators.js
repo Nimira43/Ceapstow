@@ -25,9 +25,12 @@ module.exports = {
     .isLength({ min: 8, max: 20 })
     .withMessage('Password must be between 8 and 20 characters')
     .custom((passwordConfirmation, { req }) => {
+      console.log('Password:', req.body.password)
+      console.log('Confirmation:', passwordConfirmation)
       if (passwordConfirmation !== req.body.password) {
         throw new Error('Passwords must match.')
       }
+      return true
     }),
   requireEmailExists: check('email')
     .trim()
