@@ -2,6 +2,7 @@ const express = require('express')
 const productsRepo = require('../../repositories/products')
 const productsNewTemplate = require('../../views/admin/products/new')
 const { requireTitle, requirePrice } = require('./validators')
+const { validationRequest } = require('express-validator')
 
 const router = express.Router()
 
@@ -16,6 +17,7 @@ router.post(
   '/admin/products/new', 
   [requireTitle, requirePrice],
   (req, res) => {
+    console.log()
     res.send('Submitted!')
   }
 ) 
