@@ -19,12 +19,11 @@ router.get('/admin/products/new', (req, res) => {
 router.post(
   '/admin/products/new', 
   [requireTitle, requirePrice],
+  upload.single('test'),
   (req, res) => {
     const errors = validationResult(req)
 
-    req.on('data', data => {
-      console.log(data.toString())
-    })
+    console.log(req.file)
 
     res.send('Submitted!')
   }
