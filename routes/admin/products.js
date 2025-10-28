@@ -18,7 +18,11 @@ router.post(
   [requireTitle, requirePrice],
   (req, res) => {
     const errors = validationResult(req)
-    console.log(req.body)
+
+    req.on('data', data => {
+      console.log(data.toString())
+    })
+
     res.send('Submitted!')
   }
 ) 
