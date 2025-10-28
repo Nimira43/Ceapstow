@@ -1,11 +1,13 @@
 const express = require('express')
-const productsRepo = require('../../repositories/products')
-const productsNewTemplate = require('../../views/admin/products/new')
-const { requireTitle, requirePrice } = require('./validators')
 const { validationResult } = require('express-validator')
 const multer = require('multer')
 
+const productsRepo = require('../../repositories/products')
+const productsNewTemplate = require('../../views/admin/products/new')
+const { requireTitle, requirePrice } = require('./validators')
+
 const router = express.Router()
+const upload = multer({ storage: multer.memoryStorage })
 
 router.get('/admin/products', (req, res) => {
 })
