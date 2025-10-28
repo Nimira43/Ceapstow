@@ -8,5 +8,10 @@
     "email": "debb@test.com",
     "password": "9ff1ee464aed5293c1950a273c97a45eb4f1aec98a6c15569aea34212197da8b9dd11f1843ddc3dd1084e9defcd105a41612677b2fc528986b435d5eadac3e65.fc66e588bbada692",
     "id": "fe864fed"
+  },
+  {
+    "email": "tester@test.com",
+    "password": "913b210602884bc04ba5d4064afba0f752873c09f23e020ded79b6f23f7a6cddd7eb4e54dbeea5052e6117e2d8d068aface53f2da7ae440a4aa7ff9f834088ca.40e9cf6ea65465a3",
+    "id": "386e2867"
   }
 ]
