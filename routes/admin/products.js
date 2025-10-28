@@ -18,7 +18,7 @@ router.post(
   [requireTitle, requirePrice],
   (req, res) => {
     const errors = validationResult(req)
-    console.log(errors)
+    console.log(req.body)
     res.send('Submitted!')
   }
 ) 
