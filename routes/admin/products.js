@@ -24,6 +24,7 @@ router.post(
     const errors = validationResult(req)
 
     const string = req.file.buffer.toString('base64')
+    const { title, price } = req.body
 
     res.send('Submitted!')
   }
