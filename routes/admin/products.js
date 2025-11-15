@@ -23,7 +23,7 @@ router.post(
   (req, res) => {
     const errors = validationResult(req)
 
-    console.log(req.file.buffer.toString('base64'))
+    const string = req.file.buffer.toString('base64')
 
     res.send('Submitted!')
   }
