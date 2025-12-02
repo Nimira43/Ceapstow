@@ -14,18 +14,23 @@ module.exports = ({ errors }) => {
             <div class='field'>
               <label class='label'>Title</label>
               <input class='input' name='title' />
-            ${getError(errors, 'title')}
+              <p class='help is-danger'>
+                ${getError(errors, 'title')}
+              </p>
             </div>
             <div class='field'>
-              <input class='price' name='price' />
-            ${getError(errors, 'price')}
+              <label class='price'>Price</label>
+              <input class='input' name='price' />
+              <p class='help is-danger'>
+                ${getError(errors, 'price')}
+              </p>
             </div>
             <div class='field'>
+              <label class='label'>Image</label>
               <input type='file' name='image' />
             </div>
-            
-            
-            <button>Submit</button>
+            <br />
+            <button class='main-btn'>Submit</button>
           </form>
         </div>
       </div>      
