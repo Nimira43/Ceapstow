@@ -17,9 +17,9 @@ router.get('/admin/products/new', (req, res) => {
 })
 
 router.post(
-  '/admin/products/new', 
+  '/admin/products/new',
+  upload.single('image'), 
   [requireTitle, requirePrice],
-  upload.single('image'),
   async (req, res) => {
     const errors = validationResult(req)
 
