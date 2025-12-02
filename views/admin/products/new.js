@@ -4,9 +4,9 @@ const { getError } = require('../../helpers')
 module.exports = ({ errors }) => {
   return layout ({
     content: `
-      <div>
-        <div>
-          <h1></h1>
+      <div class='columns is-centered'>
+        <div class='column is-half'>
+          <h1 class='subtitle'>Create New Product</h1>
           <form 
             method="POST"
             enctype="multipart/form-data"
