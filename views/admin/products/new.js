@@ -6,7 +6,7 @@ module.exports = ({ errors }) => {
     content: `
       <div class='columns is-centered'>
         <div class='column is-half'>
-          <h1 class='subtitle'>Create New Product</h1>
+          <h1 class='title'>Create New Product</h1>
           <form 
             method='POST'
             enctype='multipart/form-data'

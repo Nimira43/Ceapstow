@@ -26,7 +26,12 @@ module.exports = ({ req, errors }) => {
               </div>
               <button class='main-btn'>Submit</button>
               <p>Already have an account? 
-                <a href='/signin'>Login.</a>
+                <a
+                  class='linker'  
+                  href='/signin'
+                >
+                  Login
+                </a>
               </p>
             </form> 
           </div>
