@@ -8,14 +8,23 @@ module.exports = ({ errors }) => {
         <div class='column is-half'>
           <h1 class='subtitle'>Create New Product</h1>
           <form 
-            method="POST"
-            enctype="multipart/form-data"
+            method='POST'
+            enctype='multipart/form-data'
           >
-            <input placeholder="Title" name="title" />
+            <div class='field'>
+              <label class='label'>Title</label>
+              <input class='input' name='title' />
             ${getError(errors, 'title')}
-            <input placeholder="Price" name="price" />
+            </div>
+            <div class='field'>
+              <input class='price' name='price' />
             ${getError(errors, 'price')}
-            <input type="file" name="image" />
+            </div>
+            <div class='field'>
+              <input type='file' name='image' />
+            </div>
+            
+            
             <button>Submit</button>
           </form>
         </div>
