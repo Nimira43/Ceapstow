@@ -27,15 +27,8 @@ router.post(
     requirePassword,
     requirePasswordConfirmation
   ],
-  handleErrors(signupTemplate)
+  handleErrors(signupTemplate),
   async (req, res) => {
-    console.log('Incoming form data:', req.body)
-    const errors = validationResult(req)
-    
-    if (!errors.isEmpty()) {
-      return res.send(signupTemplate({ req, errors }))
-    }
-
     const { email, password, passwordConfirmation } = req.body
     const user = await usersRepo.create({ email, password })
     req.session.userId = user.id
