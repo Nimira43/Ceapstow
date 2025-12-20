@@ -29,7 +29,7 @@ router.post(
   ],
   handleErrors(signupTemplate),
   async (req, res) => {
-    const { email, password, passwordConfirmation } = req.body
+    const { email, password } = req.body
     const user = await usersRepo.create({ email, password })
     req.session.userId = user.id
     res.send('Accounted Created.')
@@ -55,14 +55,9 @@ router.post(
   '/signin', [
     requireEmailExists,
     requireValidPasswordForUser    
-  ],
+],
+  handleErrors(signinTemplate),
   async (req, res) => {
-    const errors  = validationResult(req)
-    
-    if (!errors.isEmpty()) {
-      return res.send(signinTemplate({errors}))
-    }
-
     const { email } = req.body
     const user = await usersRepo.getOneBy({ email }) 
     req.session.userId = user.id
