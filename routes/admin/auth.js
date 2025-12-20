@@ -10,6 +10,7 @@ const {
   requireEmailExists,
   requireValidPasswordForUser
 } = require('./validators')
+const { handleErrors } = require('./middlewares')
 const router = express.Router()
 
 router.get(
@@ -26,6 +27,7 @@ router.post(
     requirePassword,
     requirePasswordConfirmation
   ],
+  handleErrors(signupTemplate)
   async (req, res) => {
     console.log('Incoming form data:', req.body)
     const errors = validationResult(req)
