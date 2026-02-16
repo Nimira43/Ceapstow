@@ -58,11 +58,25 @@ router.get(
 )
 
 router.post(
-  '/admin/product/:id/edit',
+  '/admin/products/:id/edit',
   requireAuth,
-  async (req, res) => {
-    
+  upload.single('image'),
+  [requireTitle, requirePrice],
+  handleErrors(productsEditTemplate),
+  async (req, res) => {   
+    const changes = req.body
 
+    if (req.file) {
+      changes.image = req.file.buffer.toString('base64')
+    }
+
+    try {
+      await productsRepo.update(req.params.id, changes)
+    } catch (error) {
+      return res.send('Could not find item.')
+    }
+
+    res.redirect('/admin/products')
   }
 )
 

@@ -19,8 +19,9 @@ module.exports = ({ product }) => {
           type='file' 
           name='image'
         />
+        <button class='main-btn'>Submit</button>
       </form>
-      <button class='main-btn'>Submit</button>
+      
     `
   })
 }
