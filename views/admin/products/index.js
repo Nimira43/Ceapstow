@@ -15,11 +15,14 @@ module.exports = ({ products }) => {
             </a>
           </td>
           <td>
-            <button 
-              class='main-btn'
+            <form 
+              method='POST'
+              action='/admin/products/${product.id}/delete'              
             >
-              Delete
-            </button>
+              <button class='main-btn'>
+                Delete
+              </button>
+            </form>
           </td>
         </tr>
       `)
