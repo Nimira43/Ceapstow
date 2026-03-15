@@ -35,9 +35,6 @@ router.post(
   [requireTitle, requirePrice],
   handleErrors(productsNewTemplate),
   async (req, res) => {  
-    // const image = req.file.buffer.toString('base64')
-    // const { title, price } = req.body
-    // await productsRepo.create({ title, price, image })
     let image = null
     if (req.file) {
       image = req.file.buffer.toString('base64')
