@@ -1,40 +1,58 @@
-const layout = require('../layout')
-const {getError} = require('../../helpers')
+// REGISTER
 
-module.exports = ({ req, errors }) => {
+const layout = require('../layout')
+const { getError } = require('../../helpers')
+
+module.exports = ({ errors }) => {
   return layout({
     content: `
-      <div class='container'>
-        <div class='columns is-centered'>
-          <div class='column is-one-quarter'>
-            <form method='POST'>
-              <h1 class='title'>Register</h1>
-              <div class='field'>
-                <label class='label'>Email</label>
-                <input required class='input' placeholder='Email' name='email' />
-                <p class='help is-danger'>${getError(errors, 'email')}</p>
-              </div>
-              <div class='field'>
-                <label class='label'>Password</label>  
-                <input required class='input'  placeholder='Password' name='password' type='password' />
-                <p class='help is-danger'>${getError(errors, 'password')}</p>
-              </div>
-              <div class='field'>
-                <label class='label'>Confirm Password</label>  
-                <input required class='input'  placeholder='Confirm Password' name='passwordConfirmation' type='password' />
-                <p class='help is-danger'>${getError(errors, 'passwordConfirmation')}</p>
-              </div>
-              <button class='main-btn'>Submit</button>
-              <p>Already have an account? 
-                <a
-                  class='linker'  
-                  href='/signin'
-                >
-                  Login
-                </a>
-              </p>
-            </form> 
-          </div>
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <form method='POST' class="auth-form">
+            <h1 class="auth-title">Register</h1>
+
+            <div class="auth-group">
+              <label class="auth-label">Email</label>
+              <input 
+                required 
+                placeholder='Email'
+                name='email'
+                class="auth-input"
+              />
+              <p class="auth-error">${getError(errors, 'email')}</p>
+            </div>
+
+            <div class="auth-group">
+              <label class="auth-label">Password</label>  
+              <input 
+                required 
+                placeholder='Password' 
+                name='password' 
+                type='password'
+                class="auth-input"
+              />
+              <p class="auth-error">${getError(errors, 'password')}</p>
+            </div>
+
+            <div class="auth-group">
+              <label class="auth-label">Confirm Password</label>  
+              <input 
+                required  
+                placeholder='Confirm Password' 
+                name='passwordConfirmation' 
+                type='password'
+                class="auth-input"
+              />
+              <p class="auth-error">${getError(errors, 'passwordConfirmation')}</p>
+            </div>
+
+            <button class="btn auth-submit">Submit</button>
+
+            <p class="auth-switch">
+              Already have an account? 
+              <a href='/signin' class="auth-link">Login</a>
+            </p>
+          </form> 
         </div>
       </div>    
     `

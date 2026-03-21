@@ -1,51 +1,43 @@
+// ADMIN INDEX
+
 const layout = require('../layout')
 
 module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
-      return (`
-        <tr>
-          <td>${product.title}</td>
-          <td>£${product.price}</td>
-          <td>
-            <a href='/admin/products/${product.id}/edit'>
-              <button class='main-btn is-link'>
-                Edit
-              </button>
+      return `
+        <tr class="admin-row">
+          <td class="admin-cell">${product.title}</td>
+          <td class="admin-cell">£${product.price}</td>
+          <td class="admin-cell">
+            <a href="/admin/products/${product.id}/edit" class="btn admin-btn admin-btn-edit">
+              Edit
             </a>
           </td>
-          <td>
-            <form 
-              method='POST'
-              action='/admin/products/${product.id}/delete'              
-            >
-              <button class='main-btn'>
-                Delete
-              </button>
+          <td class="admin-cell">
+            <form method="POST" action="/admin/products/${product.id}/delete">
+              <button class="btn admin-btn admin-btn-delete">Delete</button>
             </form>
           </td>
         </tr>
-      `)
+      `
     })
     .join('')
 
-
   return layout({
     content: `
-      <div class='products-header'>
-        <h1 class='title'>Products</h1>
-        <a
-          href='/admin/products/new'
-          class='main-btn' 
-        >New Product</a>
+      <div class="admin-header-bar">
+        <h1 class="admin-title">Products</h1>
+        <a href="/admin/products/new" class="btn admin-btn admin-btn-new">New Product</a>
       </div>
-      <table class='table'>
+
+      <table class="admin-table">
         <thead>
           <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th class="admin-th">Title</th>
+            <th class="admin-th">Price</th>
+            <th class="admin-th">Edit</th>
+            <th class="admin-th">Delete</th>
           </tr>
         </thead>
         <tbody>

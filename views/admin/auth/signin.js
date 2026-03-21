@@ -1,35 +1,46 @@
+// LOGIN
+
 const layout = require('../layout')
-const {getError} = require('../../helpers')
+const { getError } = require('../../helpers')
 
 module.exports = ({ errors }) => {
   return layout({
     content: `
-      <div class='container'>
-        <div class='columns is-centered'>
-          <div class='columns is-one-quarter'>
-            <form method='POST'>
-              <h1 class='title'>Login</h1>
-              <div class='field'>
-                <label class='label'>Email</label>
-                <input required class='input' placeholder='Email' name='email' />
-                <p class='help is-danger'>${getError(errors, 'email')}</p>
-              </div>
-              <div class='field'>
-                <label class='label'>Password</label>  
-                <input required class='input'  placeholder='Password' name='password' type='password' />
-                <p class='help is-danger'>${getError(errors, 'password')}</p>
-              </div>
-              <button class='main-btn'>Submit</button>
-              <p>Have no account?  
-                <a 
-                  class='linker'                
-                  href='/signup'
-                >
-                  Register
-                </a>
-              </p>
-            </form>
-          </div>
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <form method='POST' class="auth-form">
+            <h1 class="auth-title">Login</h1>
+
+            <div class="auth-group">
+              <label class="auth-label">Email</label>
+              <input 
+                required 
+                placeholder='Email' 
+                name='email'
+                class="auth-input"
+              />
+              <p class="auth-error">${getError(errors, 'email')}</p>
+            </div>
+
+            <div class="auth-group">
+              <label class="auth-label">Password</label>  
+              <input 
+                required  
+                placeholder='Password' 
+                name='password' 
+                type='password'
+                class="auth-input"
+              />
+              <p class="auth-error">${getError(errors, 'password')}</p>
+            </div>
+
+            <button class="btn auth-submit">Submit</button>
+
+            <p class="auth-switch">
+              Have no account?  
+              <a href='/signup' class="auth-link">Register</a>
+            </p>
+          </form>
         </div>
       </div>    
     `

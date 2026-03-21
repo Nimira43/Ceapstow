@@ -1,45 +1,42 @@
+// ADMIN - NEW
+
 const layout = require('../layout')
 const { getError } = require('../../helpers')
 
 module.exports = ({ errors }) => {
   return layout ({
     content: `
-      <div class='columns is-centered'>
-        <div class='column is-half'>
-          <h1 class='title'>Create New Product</h1>
+      <div class="admin-form-wrapper">
+        <div class="admin-form-card">
+          <h1 class="admin-form-title">Create New Product</h1>
+
           <form 
             method='POST'
             enctype='multipart/form-data'
+            class="admin-form"
           >
-            <div class='field'>
-              <label class='label'>Title</label>
-              <input
-                class='input'
-                name='title'
-              />
-              <p class='help is-danger'>
+            <div class="form-group">
+              <label class="form-label">Title</label>
+              <input name='title' class="form-input" />
+              <p class="form-error">
                 ${getError(errors, 'title')}
               </p>
             </div>
-            <div class='field'>
-              <label class='price'>Price</label>
-              <input 
-                class='input' 
-                name='price' 
-              />
-              <p class='help is-danger'>
+
+            <div class="form-group">
+              <label class="form-label">Price</label>
+              <input name='price' class="form-input" />
+              <p class="form-error">
                 ${getError(errors, 'price')}
               </p>
             </div>
-            <div class='field'>
-              <label class='label'>Image</label>
-              <input 
-                type='file' 
-                name='image' 
-              />
+
+            <div class="form-group">
+              <label class="form-label">Image</label>
+              <input name='image' class="form-input" />
             </div>
-            <br />
-            <button class='main-btn'>Submit</button>
+
+            <button class="btn admin-btn-submit">Submit</button>
           </form>
         </div>
       </div>      
