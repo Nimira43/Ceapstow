@@ -36,7 +36,9 @@ module.exports = ({ errors }) => {
               <input name='image' class="form-input" />
             </div>
 
-            <button class="btn admin-btn-submit">Submit</button>
+            <button class="btn btn-orange btn-block">
+              Submit
+            </button>
           </form>
         </div>
       </div>      

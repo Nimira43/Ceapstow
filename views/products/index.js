@@ -17,8 +17,16 @@ module.exports = ({ products }) => {
           </div>
 
           <div class="product-actions">
-            <form action="/cart/products" method="POST">
-              <button class="btn add-to-cart">
+            <form 
+              action="/cart/products" 
+              method="POST"
+            >
+              <input 
+                hidden
+                value="${product.id}"
+                name="productId"              
+              />
+              <button class="btn btn-orange btn-block">
                 Add to cart
               </button>
             </form>

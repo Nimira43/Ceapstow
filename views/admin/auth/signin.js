@@ -34,7 +34,9 @@ module.exports = ({ errors }) => {
               <p class="auth-error">${getError(errors, 'password')}</p>
             </div>
 
-            <button class="btn auth-submit">Submit</button>
+            <button class="btn btn-orange btn-block">
+              Submit
+            </button>
 
             <p class="auth-switch">
               Have no account?  

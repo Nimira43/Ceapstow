@@ -10,13 +10,15 @@ module.exports = ({ products }) => {
           <td class="admin-cell">${product.title}</td>
           <td class="admin-cell">£${product.price}</td>
           <td class="admin-cell">
-            <a href="/admin/products/${product.id}/edit" class="btn admin-btn admin-btn-edit">
+            <a href="/admin/products/${product.id}/edit" class="btn btn-orange">
               Edit
             </a>
           </td>
           <td class="admin-cell">
             <form method="POST" action="/admin/products/${product.id}/delete">
-              <button class="btn admin-btn admin-btn-delete">Delete</button>
+              <button class="btn btn-dark">
+                Delete
+              </button>
             </form>
           </td>
         </tr>
@@ -28,7 +30,9 @@ module.exports = ({ products }) => {
     content: `
       <div class="admin-header-bar">
         <h1 class="admin-title">Products</h1>
-        <a href="/admin/products/new" class="btn admin-btn admin-btn-new">New Product</a>
+        <a href="/admin/products/new" class="btn btn-orange">
+          New Product
+        </a>
       </div>
 
       <table class="admin-table">
