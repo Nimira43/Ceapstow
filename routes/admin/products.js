@@ -82,7 +82,6 @@ router.post(
     } catch (error) {
       return res.send('Could not find item.')
     }
-
     res.redirect('/admin/products')
   }
 )

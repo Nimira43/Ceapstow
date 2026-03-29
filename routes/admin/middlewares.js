@@ -6,15 +6,12 @@ module.exports = {
       const errors = validationResult(req)
 
       if (!errors.isEmpty()) {
-        
         let data ={}
         if (dataCb) {
           data = await dataCb(req)
         }
-
         return res.send(templateFunc({ errors, ...data }))
       }
-
       next()
     }
   },
